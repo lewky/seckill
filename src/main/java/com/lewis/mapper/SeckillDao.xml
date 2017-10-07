@@ -1,0 +1,38 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace:指定为哪个接口提供配置 --> 
+<mapper namespace="com.lewis.dao.SeckillDao">
+	<!--目的:为dao接口方法提供sql语句配置， 即针对dao接口中的方法编写我们的sql语句 -->
+
+	<!-- int reduceNumber(long seckillId, Date killTime);-->
+	<!-- 这里id必须和对应的DAO接口的方法名一样 -->
+	<update id="reduceNumber">
+		UPDATE seckill
+		SET number = number-1
+		WHERE seckill_id=#{seckillId}
+		AND start_time <![CDATA[ <= ]]>
+		#{killTime}
+		AND end_time >= #{killTime}
+		AND number > 0;
+	</update>
+
+	 <!-- parameterType:使用到的参数类型
+		正常情况java表示一个类型的包名+类名，这直接写类名，因为后面有一个配置可以简化写包名的过程 -->
+	<select id="queryById" resultType="Seckill" parameterType="long">
+		<!-- 可以通过别名的方式列明到java名的转换，如果开启了驼峰命名法就可以不用这么写了 
+       		 select seckill_id as seckillId
+        -->
+		SELECT seckill_id,name,number,create_time,start_time,end_time
+		FROM seckill
+		WHERE seckill_id=#{seckillId}
+	</select>
+
+	<select id="queryAll" resultType="Seckill">
+		SELECT *
+		FROM seckill
+		ORDER BY create_time DESC
+		limit #{offset},#{limit}
+	</select>
+
+</mapper>
