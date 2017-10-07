@@ -1,9 +1,9 @@
-#SSM实战项目——Java高并发秒杀API
+# SSM实战项目——Java高并发秒杀API
 
-##本文包括了项目的完整流程+开发过程中遇到的各种坑的总结+学习笔记和问题扩展
+## 本文包括了项目的完整流程+开发过程中遇到的各种坑的总结+学习笔记和问题扩展
 ---
 
-##项目介绍
+## 项目介绍
 
 >何为秒杀？
 
@@ -34,7 +34,7 @@
 * [Java高并发秒杀API之Web层](http://www.imooc.com/learn/630)
 * [Java高并发秒杀API之高并发优化](http://www.imooc.com/learn/632)
 
-##相关技术介绍
+## 相关技术介绍
 
 >MySQL
 
@@ -70,7 +70,7 @@
 * 高并发点和高并发分析
 * 优化思路并实现
 
-##开发环境
+## 开发环境
 
 * **操作系统**：Windows 8
 * **IDE工具**：Eclipse
@@ -80,7 +80,7 @@
 * **构建工具**：Maven
 * **框架**：SSM
 
-##项目总结
+## 项目总结
 
 >本文根据慕课网的视频教学进行了相应的学习总结，全文较长，分为四节，附带CSDN传送门
 
@@ -90,22 +90,22 @@
 * [**Java高并发秒杀API(四)之高并发优化**](http://blog.csdn.net/lewky_liu/article/details/78166080)
 
 >项目源码
-##<font color="red">TODO</font>
+## <font color="red">TODO</font>
 * **[源码下载]()**
 * **[GitHub地址]()**
 
 ---
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>---
 
-#[Java高并发秒杀API(一)之业务分析与DAO层](http://blog.csdn.net/lewky_liu/article/details/78159983)
+# [Java高并发秒杀API(一)之业务分析与DAO层](http://blog.csdn.net/lewky_liu/article/details/78159983)
 
 ---
 
 >本SSM实战项目使用了Maven进行依赖管理，如果有不清楚Maven是什么的可以参考[这篇文章](http://blog.csdn.net/lewky_liu/article/details/78138381)
 
-##1. 创建Maven项目和依赖
+## 1. 创建Maven项目和依赖
 
-###1.1 创建项目前需要先安装Maven，并设置好环境变量
+### 1.1 创建项目前需要先安装Maven，并设置好环境变量
 
 * [Maven下载](http://download.csdn.net/download/lewky_liu/10000144)
 * 设置环境变量
@@ -113,7 +113,7 @@
 	* 将`%MAVEN_HOME%\bin`添加到`Path`变量下
 * 运行CMD，输入`mvn -v`后可以看到Maven的版本信息等则表示安装成功
 
-###1.2 创建Maven项目有两种方式，如下
+### 1.2 创建Maven项目有两种方式，如下
 
 **第一种创建方式：使用命令行手动创建**
 
@@ -140,7 +140,7 @@
 
 >如果是第一次使用Eclipse的Maven插件来创建Maven项目的可能会遇到一些问题，可以参考[该博文](http://blog.csdn.net/lewky_liu/article/details/78138381)
 
-###1.3 修改pom.xml文件
+### 1.3 修改pom.xml文件
 
 当创建完Maven项目后会在根目录下有一个pom.xml文件，Maven项目通过pom.xml进行项目依赖的管理，如果没有该xml文件，Eclipse不会将该项目当作一个Maven项目
 
@@ -321,9 +321,9 @@
 
 >有想要了解Maven的依赖范围与传递性依赖的请参考[该博文](http://blog.csdn.net/lewky_liu/article/details/78145211)
 
-##2. 秒杀业务分析
+## 2. 秒杀业务分析
 
-###2.1 业务分析
+### 2.1 业务分析
 
 >秒杀业务的核心是对库存的处理，其业务流程如下图
 
@@ -359,7 +359,7 @@
 * **不落地数据**：一般指存储在内存或者是网络传输里的数据，这些数据是瞬时，使用完毕就会消失，例如：我们在浏览器发送给服务器的请求；从数据库读取出来的一直到页面展示前的数据等等。
 * “不落地”传输能够满足用户在性能上的要求。
 
-###2.2 使用MySQL实现秒杀的难点分析
+### 2.2 使用MySQL实现秒杀的难点分析
 
 >难点问题：如何高效地处理竞争？
 
@@ -389,9 +389,9 @@ start transaction（开启事务）→ update库存数量 → insert购买明细
 
 现实中有的用户回通过浏览器插件提前知道秒杀接口，填入参数和地址来实现自动秒杀，这对于其他用户来说是不公平的，我们也不希望看到这种情况
 
-##3. DAO层设计
+## 3. DAO层设计
 
-###3.1 创建数据库
+### 3.1 创建数据库
 
 源码里有个sql文件夹，可以给出了sql语句；也可以选择自己手写。数据库一共就两个表：秒杀库存表、秒杀成功明细表。
 
@@ -445,7 +445,7 @@ start transaction（开启事务）→ update库存数量 → insert购买明细
 
 为了解决这个问题，将create_time放到start_time和end_time的前面，还有的mysql版本需要将三个时间戳都设置默认值。
 
-###3.2 创建数据表对应的实体类
+### 3.2 创建数据表对应的实体类
 
 >在`src/main/java`包下创建com.lewis.entity包，接着建立`Seckill`实体类
 
@@ -580,7 +580,7 @@ start transaction（开启事务）→ update库存数量 → insert购买明细
 	
 	}
 
-###3.3 创建实体类对应的DAO层接口（也就是Mapper接口，DAO针对的是具体实体来操作的“实体的增删改查”）
+### 3.3 创建实体类对应的DAO层接口（也就是Mapper接口，DAO针对的是具体实体来操作的“实体的增删改查”）
 
 >在`src/main/java`下建立`com.lewis.dao`包，在包下建立`SeckillDao`接口
 
@@ -639,7 +639,7 @@ start transaction（开启事务）→ update库存数量 → insert购买明细
 
 从上面的代码可以发现，当方法的形参在两个及两个以上时，需要在参数前加上@Param，如果不加上该注解会在之后的测试运行时报错。这是Sun提供的默认编译器（javac）在编译后的Class文件中会丢失参数的实际名称，方法中的形参会变成无意义的arg0、arg1等，在只有一个参数时就无所谓，但当参数在两个和两个以上时，传入方法的参数就会找不到对应的形参。因为Java形参的问题，所以在多个基本类型参数时需要用@Param注解区分开来。
 
-###3.4 基于MyBatis实现DAO接口
+### 3.4 基于MyBatis实现DAO接口
 
 >MyBatis怎么用？SQL写在哪里？
 
@@ -797,7 +797,7 @@ CDATA指的是不应由 XML 解析器进行解析的文本数据，在XML元素�
 
 所以在这里我们需要使用`<![CDATA[ <= ]]>`来告诉XML`<=`不是XML的语言。
 
-###3.5 整合Spring和MyBatis
+### 3.5 整合Spring和MyBatis
 
 在`resources`目录下创建一个新的目录`spring`(存放所有Spring相关的配置)
 
@@ -881,7 +881,7 @@ CDATA指的是不应由 XML 解析器进行解析的文本数据，在XML元素�
 
 关于Spring的XML配置文件的头部文件的说明可以参考[这篇文章](http://blog.csdn.net/lewky_liu/article/details/78157747)
 
-###3.6 DAO层单元测试
+### 3.6 DAO层单元测试
 
 有不知道Eclipse如何直接进行生成快速的测试单元的，可以看看[这篇文章](http://blog.csdn.net/jj_nan/article/details/64134781)
 
