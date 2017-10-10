@@ -80,7 +80,7 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
-			<scope>provided</scope>  
+			<scope>provided</scope>
 		</dependency>
 
 		<!--5:spring依赖 -->
@@ -129,7 +129,7 @@
 			<version>4.1.7.RELEASE</version>
 		</dependency>
 
-		<!--添加redis依赖 -->
+		<!--添加Redis依赖 -->
 		<dependency>
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
@@ -146,6 +146,12 @@
 			<groupId>com.dyuproject.protostuff</groupId>
 			<artifactId>protostuff-runtime</artifactId>
 			<version>1.0.8</version>
+		</dependency>
+		<!--导入apache工具类 -->
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.2</version>
 		</dependency>
 	</dependencies>
 	<build>

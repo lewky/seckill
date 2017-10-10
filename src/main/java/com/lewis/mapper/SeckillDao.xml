@@ -35,4 +35,14 @@
 		limit #{offset},#{limit}
 	</select>
 
+	<!--调用储存过程 -->
+	<select id="killByProcedure" statementType="CALLABLE">
+		CALL execute_seckill(
+			#{seckillId,jdbcType=BIGINT,mode=IN},
+			#{phone,jdbcType=BIGINT,mode=IN},
+			#{killTime,jdbcType=TIMESTAMP,mode=IN},
+			#{result,jdbcType=INTEGER,mode=OUT}
+		)
+	</select>
+
 </mapper>
