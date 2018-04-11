@@ -2,7 +2,7 @@
 
 ### 本文包括了项目的完整流程+开发过程中遇到的各种坑的总结+学习笔记和问题扩展，如果觉得README太长，我在blog里进行了分章，[点击前往](http://blog.csdn.net/lewky_liu/article/details/78154502)
 
-### 这是完成后的项目，<a href="http://120.78.137.138:8080/" target="_blank">点我看看实际效果</a>
+### ~~这是完成后的项目，<a href="#">点我看看实际效果</a>(阿里云到期了orz)~~
 ---
 
 ## 项目介绍
@@ -96,8 +96,16 @@
 * [**源码下载**](http://download.csdn.net/download/lewky_liu/10013556)
 * [**GitHub地址**](https://github.com/lewky/Seckill)
 
+>How to play
+
+* 将下载的源码解压后作为Maven项目导入到IDE工具中；或者将从GitHub克隆下来的项目作为Maven项目导入到IDE工具中
+* 打开项目中的jdbc.properties文件，修改里边的url,username和password
+* 将项目部署到Tomcat上并启动
+	* 可以直接用IDE内嵌的Tomcat启动项目
+	* 或者将本项目通过**mvn clean package**命令打成war包并丢到本地安装的Tomcat的webapps目录下，接着启动Tomcat即可
+* 在浏览器上访问：http://localhost:8080/seckill
+
 ---
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>---
 
 # [Java高并发秒杀API(一)之业务分析与DAO层](http://blog.csdn.net/lewky_liu/article/details/78159983)
 
