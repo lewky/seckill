@@ -103,7 +103,7 @@
 * 将项目部署到Tomcat上并启动
 	* 可以直接用IDE内嵌的Tomcat启动项目
 	* 或者将本项目通过**mvn clean package**命令打成war包并丢到本地安装的Tomcat的webapps目录下，接着启动Tomcat即可
-* 在浏览器上访问：http://localhost:8080/seckill
+* 在浏览器上访问：`http://localhost:8080/seckill`
 
 ---
 
