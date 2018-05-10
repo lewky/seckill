@@ -4,6 +4,39 @@
 
 ### ~~这是完成后的项目，<a href="#">点我看看实际效果</a>(阿里云到期了orz)~~
 ---
+## 项目截图
+
+### 秒杀列表
+
+![秒杀列表](https://raw.githubusercontent.com/lewky/markdownImages/master/resource/seckill/%E7%A7%92%E6%9D%80%E5%88%97%E8%A1%A8.jpg)
+
+### 秒杀详情页
+
+![秒杀详情页](https://raw.githubusercontent.com/lewky/markdownImages/master/resource/seckill/%E7%A7%92%E6%9D%80%E8%AF%A6%E6%83%85%E9%A1%B5.jpg)
+
+### 错误提示
+
+![错误提示](https://raw.githubusercontent.com/lewky/markdownImages/master/resource/seckill/%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA.jpg)
+
+### 开始秒杀
+
+![开始秒杀](https://raw.githubusercontent.com/lewky/markdownImages/master/resource/seckill/%E5%BC%80%E5%A7%8B%E7%A7%92%E6%9D%80.jpg)
+
+### 秒杀成功
+
+![秒杀成功](https://raw.githubusercontent.com/lewky/markdownImages/master/resource/seckill/%E7%A7%92%E6%9D%80%E6%88%90%E5%8A%9F.jpg)
+
+### 重复秒杀
+
+![重复秒杀](https://raw.githubusercontent.com/lewky/markdownImages/master/resource/seckill/%E9%87%8D%E5%A4%8D%E7%A7%92%E6%9D%80.jpg)
+
+### 秒杀倒计时
+
+![秒杀倒计时](https://raw.githubusercontent.com/lewky/markdownImages/master/resource/seckill/%E7%A7%92%E6%9D%80%E5%80%92%E8%AE%A1%E6%97%B6.jpg)
+
+### 秒杀结束
+
+![秒杀结束](https://raw.githubusercontent.com/lewky/markdownImages/master/resource/seckill/%E7%A7%92%E6%9D%80%E7%BB%93%E6%9D%9F.jpg)
 
 ## 项目介绍
 
