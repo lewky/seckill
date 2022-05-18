@@ -43,7 +43,7 @@ public class SeckillController
         }
 
         Seckill seckill=seckillService.getById(seckillId);
-        if (seckill==null)
+        if (seckill == null)
         {
             return "forward:/seckill/list";
         }
@@ -81,7 +81,7 @@ public class SeckillController
                                                    @PathVariable("md5") String md5,
                                                    @CookieValue(value = "userPhone",required = false) Long userPhone)
     {
-        if (userPhone==null)
+        if (userPhone == null)
         {
             return new SeckillResult<SeckillExecution>(false,"未注册");
         }
