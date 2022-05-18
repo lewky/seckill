@@ -26,7 +26,7 @@ public enum SeckillStatEnum {
 
     public static SeckillStatEnum stateOf(int index) {
         for (SeckillStatEnum state : values()) {
-            if (state.getState()==index) {
+            if (state.getState() == index) {
                 return state;
             }
         }
